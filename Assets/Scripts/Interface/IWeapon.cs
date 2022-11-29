@@ -2,6 +2,6 @@ namespace Asteroids
 {
     interface IWeapon
     {
-        void shoot();
+        void Attack();
     }
 }

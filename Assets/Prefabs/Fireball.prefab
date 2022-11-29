@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 50263717864067914}
-  _fireForce: 150
-  lifeTime: 0.29
+  _fireForce: 6
+  lifeTime: 0.6
   _minigunDamage: 10
 --- !u!50 &50263717864067914
 Rigidbody2D:
