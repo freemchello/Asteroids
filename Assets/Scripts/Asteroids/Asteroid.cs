@@ -42,7 +42,7 @@ namespace Asteroids
         {
             if (asteroid.CompareTag("Bullet") || asteroid.CompareTag("Player") || asteroid.CompareTag("Enemy"))//тэггами
             {
-                Debug.Log("desactive ASTEROID");
+                //Debug.Log("desactive ASTEROID");
                 DesActivate();//отключать
             }
         }

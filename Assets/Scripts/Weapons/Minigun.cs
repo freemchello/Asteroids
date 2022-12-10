@@ -8,10 +8,17 @@ namespace Asteroids
     {
         public Rigidbody2D _rb;
 
+        public EnemyObserver Enemy;
+
         [SerializeField] public float _fireForce = 1f; //скорость выстрела
         [SerializeField] public float lifeTime = 3f;//время жизни пули
         [SerializeField] public float _minigunDamage = 10f;//урон от пули
 
+        private void Start()
+        {
+            var listenerHitShowDamage = new ListenerHitShowDamage();
+            listenerHitShowDamage.Add(Enemy);
+        }
         private void FixedUpdate()
         {
             this._rb.AddForce(transform.up * _fireForce, ForceMode2D.Impulse);
@@ -39,10 +46,12 @@ namespace Asteroids
 
         private void OnTriggerEnter2D(Collider2D bullet) //при взаимодействии коллайдера пули с
         {
-            if (bullet.CompareTag("Asteroid") || bullet.CompareTag("Enemy"))//тэгом Астероид
+            if (bullet.CompareTag("Asteroid") || bullet.CompareTag("Enemy"))//тэгом Астероид, Enemy
             {
-                Debug.Log("DESTROY BULLET");
-                Debug.Log("Attack = " + _minigunDamage);
+                //Debug.Log("DESTROY BULLET");
+                //Debug.Log("Attack = " + _minigunDamage);
+                Enemy.Hit(_minigunDamage);
+                Debug.Log("Observer");
                 DesActivate();//отключать
             }
         }

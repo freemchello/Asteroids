@@ -26,13 +26,6 @@ namespace Asteroids
             this.container = container;
             this.CreatePool(count);
         }
-        //public PoolMono(prefab[], int count, Transform container) //задумка конструктора пула с Массивом объектов, разобраться как
-        //{
-        //    this.prefab[] = prefab[];
-        //    this.container = container;
-
-        //    this.CreatePool(count);
-        //}
         private void CreatePool(int count) //метод создания пула с переданной ёмкостью
         {
             this.pool = new List<T>(); //определяем пул
